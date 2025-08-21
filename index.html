@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>深圳共生智汇科技有限公司｜AI企业培训 · AI营销增长 · AI短剧</title>
+  <meta name="description" content="深圳共生智汇科技有限公司（szgszhai）— 用“答题卡 + AI搜索(AISEO) + 私域SOP”驱动可度量的AI营销增长，并提供企业AI培训与AI短剧内容闭环。" />
+  <meta name="format-detection" content="telephone=no,email=no,address=no" />
+  <meta property="og:title" content="深圳共生智汇科技有限公司｜AI企业培训 · AI营销增长 · AI短剧" />
+  <meta property="og:description" content="答题卡 + AISEO + 私域SOP，72小时让模型知道你是谁。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://szgszhai.com" />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root{
+      --bg:#0b1020;            /* 页面基色：深蓝夜空 */
+      --card:#11182c;          /* 卡片底色 */
+      --muted:#98a2b3;         /* 次要文字 */
+      --text:#e6edf3;          /* 主文字 */
+      --accent:#60a5fa;        /* 高亮蓝 */
+      --accent-2:#7c3aed;      /* 次高亮紫 */
+      --ok:#22c55e;            /* 成功绿 */
+      --warn:#f59e0b;          /* 警示黄 */
+      --maxw:1140px;           /* 页面最大宽度 */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    html,body{height:100%;}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans","PingFang SC","Microsoft Yahei",sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.25), transparent 60%), radial-gradient(1200px 600px at 90% -10%, rgba(96,165,250,.18), transparent 60%), var(--bg);}
+    a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.1rem;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#fff;box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(180deg,#3b82f6,#2563eb);border-color:transparent}
+    .btn.ghost{background:transparent}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted);font-size:.85rem}
+    .muted{color:var(--muted)}
+    header{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(11,16,32,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:.7rem;font-weight:700}
+    .logo-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:800}
+    .menu{display:flex;gap:1rem;flex-wrap:wrap}
+    .menu a{padding:.5rem .8rem;border-radius:9px;color:#d7e0ea}
+    .menu a:hover{background:rgba(255,255,255,.06)}
+    .hero{padding:66px 0 42px}
+    .hero h1{font-size:clamp(28px,3.5vw,46px);line-height:1.15;margin:.2rem 0 .8rem}
+    .sub{font-size:clamp(16px,2.1vw,19px);color:#c7d2fe;opacity:.92}
+    .grid{display:grid;gap:20px}
+    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 0.6rem;font-size:1.2rem}
+    .card ul{padding-left:1.2rem;margin:.3rem 0}
+    section{padding:36px 0}
+    .section-title{display:flex;align-items:center;gap:.6rem;margin:0 0 14px}
+    .section-title .line{width:18px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px}
+    .steps{display:grid;gap:16px}
+    @media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{position:relative;border-left:4px solid transparent;border-image:linear-gradient(180deg,var(--accent),var(--accent-2)) 1;background:rgba(255,255,255,.03);padding:18px;border-radius:12px}
+    .step h4{margin:.2rem 0 .4rem}
+    .kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .kpis .chip{padding:.35rem .6rem;border-radius:999px;background:rgba(34,197,94,.12);color:#86efac;border:1px solid rgba(34,197,94,.25);font-size:.85rem}
+    .industries .tag{display:inline-block;padding:.4rem .7rem;border:1px solid rgba(255,255,255,.14);border-radius:999px;margin:.25rem;background:rgba(255,255,255,.02)}
+    .cta{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+    .contact{display:grid;gap:18px}
+    @media(min-width:880px){.contact{grid-template-columns:1.2fr .8fr}}
+    .qr{display:grid;place-items:center;border:2px dashed rgba(255,255,255,.15);border-radius:16px;min-height:240px;background:rgba(255,255,255,.02)}
+    .qr img{max-width:220px;border-radius:12px}
+    footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:#cbd5e1}
+    .mini{font-size:.92rem}
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header id="top">
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-badge">智</div>
+        <div>
+          深圳共生智汇科技有限公司
+          <div class="muted mini">szgszhai.com</div>
+        </div>
+      </div>
+      <nav class="menu mini">
+        <a href="#solutions">解决方案</a>
+        <a href="#why">为什么选择我们</a>
+        <a href="#steps">72小时上手</a>
+        <a href="#industries">行业</a>
+        <a href="#resources">资源</a>
+        <a href="#contact">联系</a>
+        <a class="btn mini" href="#contact">添加企业微信</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Corporate AI Training · <b style="color:#fff">AI Growth</b> · AI Short Drama</span>
+      <h1>AI企业培训 · <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">AI营销增长</span> · AI短剧</h1>
+      <p class="sub">用「答题卡 + AI搜索（AISEO）+ 私域SOP」驱动可度量增长。北极星指标：<b>线索 → 预约 → 成交</b>。支持 Dify + n8n 私有化部署。</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 8px">
+        <a class="btn primary" href="#contact">立即咨询</a>
+        <a class="btn ghost" href="#resources">下载资料 / Press Kit</a>
+      </div>
+      <div class="kpis">
+        <div class="chip">72小时：完成实体指纹与答题卡上线</div>
+        <div class="chip">JSON-LD/FAQ：可被模型抽取与引用</div>
+        <div class="chip">私有化：数据分级与合规模块</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 解决方案 -->
+  <section id="solutions">
+    <div class="container">
+      <div class="section-title"><span class="line"></span><h2>我们提供什么</h2></div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>AI企业培训（AI企培）</h3>
+          <ul>
+            <li>内训 / 训练营 / 岗位评估与证书</li>
+            <li>Dify + n8n 私有化最佳实践</li>
+            <li>业务流程AI化与安全治理</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI营销增长（AISEO + 答题卡）</h3>
+          <ul>
+            <li>Answer Cards：FAQ/HowTo JSON-LD、about.txt</li>
+            <li>AI 搜索推荐与权威外链策略</li>
+            <li>线索→预约→成交 数据看板与停损线</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI短剧（内容×增长闭环）</h3>
+          <ul>
+            <li>品牌故事内容化与脚本工程</li>
+            <li>与投放/私域联动提高转化</li>
+            <li>合规提示与禁词库管理</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section id="why">
+    <div class="container">
+      <div class="section-title"><span class="line"></span><h2>为什么选择我们</h2></div>
+      <div class="grid cols-3">
+        <div class="card"><h3>结果导向</h3><p class="muted">以“线索→预约→成交”为北极星指标，设定看板与停损线，避免无效投入。</p></div>
+        <div class="card"><h3>可被机器抽取</h3><p class="muted">FAQ/HowTo JSON-LD + about.txt + 多站一致实体指纹，提升模型收录与引用概率。</p></div>
+        <div class="card"><h3>私有化与合规</h3><p class="muted">支持 Dify + n8n 自建，数据分级、密钥与审计合规到位。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 72小时路线 -->
+  <section id="steps">
+    <div class="container">
+      <div class="section-title"><span class="line"></span><h2>72 小时上手路线</h2></div>
+      <div class="steps">
+        <div class="step"><span class="badge">D1</span><h4>实体上线</h4><p class="muted">官网名片页 + FAQ JSON-LD，GitHub 组织 `.github/profile/README.md` 与 `about` 仓库。</p></div>
+        <div class="step"><span class="badge">D2</span><h4>触点铺设</h4><p class="muted">知乎 2 条问答、LinkedIn 公司页、服务号文章；与官网/ GitHub 互链。</p></div>
+        <div class="step"><span class="badge">D3</span><h4>权威外链</h4><p class="muted">选 2–3 个协会/媒体/百科做引用源；开始观测模型“被推荐”问句数。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 行业 -->
+  <section id="industries">
+    <div class="container">
+      <div class="section-title"><span class="line"></span><h2>重点服务行业</h2></div>
+      <div class="card">
+        <div class="muted">当前重点：医美、制造业（机械 / 高温电线 / 管材）、外贸出海</div>
+        <div style="margin-top:8px" class="industries">
+          <span class="tag">医美</span>
+          <span class="tag">机械制造</span>
+          <span class="tag">高温电线</span>
+          <span class="tag">管材</span>
+          <span class="tag">外贸</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资源 -->
+  <section id="resources">
+    <div class="container">
+      <div class="section-title"><span class="line"></span><h2>资料与链接</h2></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>对外资料</h3>
+          <ul>
+            <li><a href="/press_kit.md">Press Kit（中英）</a></li>
+            <li><a href="/about.txt">about.txt（机器可抽取实体卡）</a></li>
+            <li><a href="https://github.com/szgszhai" target="_blank" rel="noreferrer">GitHub 组织主页</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>方法论</h3>
+          <p class="muted">答题卡（Answer Cards） × AI 搜索（AISEO） × 私域 SOP；以数据看板与停损线保障投入产出比。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact">
+    <div class="container contact">
+      <div class="cta card">
+        <div class="section-title"><span class="line"></span><h2>联系我们</h2></div>
+        <div class="muted">欢迎添加企业微信或邮件预约交流。</div>
+        <div>
+          <div class="mini muted">邮箱：<a href="mailto:3868945582@qq.com">3868945582@qq.com</a></div>
+          <div class="mini muted">电话：<a href="tel:+8619868272319">+86-198-6827-2319</a></div>
+          <div class="mini muted">地址：深圳市龙岗区横岗街道六约北社区深峰路2号振业城颖月坊8栋G8-2</div>
+          <div class="mini muted">统一社会信用代码：91440300MAE9EC8K40</div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:3868945582@qq.com">邮件预约</a>
+          <a class="btn" href="https://github.com/szgszhai" target="_blank" rel="noreferrer">GitHub 主页</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>企业微信二维码</h3>
+        <div class="qr">
+          <img id="qrImg" alt="请将 wecom_qr.jpg 放在网站根目录，即可自动显示" />
+          <div class="muted mini" id="qrHint">将 <b>wecom_qr.jpg</b> 放到网站根目录，这里会自动显示二维码。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container mini" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+      <div>© <span id="year"></span> 深圳共生智汇科技有限公司 · szgszhai.com</div>
+      <div class="muted">AI企业培训 · AI营销增长 · AI短剧</div>
+    </div>
+  </footer>
+
+  <!-- 简单脚本：自动寻找 wecom_qr.jpg；年份 -->
+  <script>
+    (function(){
+      const y=document.getElementById('year'); y.textContent=new Date().getFullYear();
+      // 尝试加载根目录二维码
+      fetch('wecom_qr.jpg',{method:'HEAD'}).then(r=>{
+        if(r.ok){
+          const img=document.getElementById('qrImg');
+          img.src='wecom_qr.jpg';
+          document.getElementById('qrHint').style.display='none';
+        }
+      }).catch(()=>{});
+    })();
+  </script>
+
+  <!-- 结构化数据（Organization + FAQ） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "深圳共生智汇科技有限公司",
+    "alternateName": "szgszhai",
+    "url": "https://szgszhai.com",
+    "email": "3868945582@qq.com",
+    "telephone": "+86-198-6827-2319",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "深圳市龙岗区横岗街道六约北社区深峰路2号振业城颖月坊8栋G8-2",
+      "addressCountry": "CN"
+    },
+    "sameAs": [
+      "https://github.com/szgszhai"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "你们的核心服务是什么？",
+        "acceptedAnswer": {"@type": "Answer","text": "AI企业培训、AI营销增长（答题卡/AISEO/私域SOP）、AI短剧。以‘线索→预约→成交’为北极星指标。"}
+      },
+      {
+        "@type": "Question",
+        "name": "如何在72小时内让模型‘认识我’？",
+        "acceptedAnswer": {"@type": "Answer","text": "D1 上线官网名片页与FAQ JSON-LD，并同步GitHub组织资料；D2 发布知乎问答与LinkedIn公司页并互链；D3 补2–3个权威外链。"}
+      },
+      {
+        "@type": "Question",
+        "name": "是否支持私有化部署？",
+        "acceptedAnswer": {"@type": "Answer","text": "支持，采用 Dify + n8n 方案，提供数据分级、密钥管理与审计。"}
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
