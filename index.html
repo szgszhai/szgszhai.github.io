@@ -1,256 +1,338 @@
-
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>深圳共生智汇科技｜AI企业培训 · AI营销增长 · AI短剧</title>
-  <meta name="description" content="用『答题卡 + AI搜索（AISEO）+ 私域SOP』驱动可度量增长。72小时可完成实体搭建与答题卡上线，支持 Dify + n8n 私有化部署。">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='12' width='64' height='64' fill='%231b1f3a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-size='36' fill='%23a5b4fc' font-family='Segoe UI,Arial'%3E智%3C/text%3E%3C/svg%3E">
-  <style>
-    :root{
-      --bg:#0b1020;--panel:#0f1426cc;--muted:#94a3b8;--text:#e6e9f2;--accent:#7c9cff;--accent-2:#22d3ee;--card:#11162b;--border:#1f2542;
-      --radius:18px;--shadow:0 8px 30px rgba(6,10,25,.35);
-    }
-    *{box-sizing:border-box}html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%,#1f2856 0%,transparent 60%),radial-gradient(1000px 600px at 110% 20%,#16213e 0%,transparent 55%),var(--bg);
-         color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,PingFang SC,Helvetica,Arial}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1160px;margin:0 auto;padding:0 20px}
-    /* 顶栏 */
-    .nav{position:sticky;top:0;z-index:40;background:rgba(10,14,28,.55);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
-    .nav-inner{display:flex;align-items:center;gap:20px;height:64px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand-badge{width:32px;height:32px;border-radius:10px;background:#1b1f3a;display:grid;place-items:center;box-shadow:var(--shadow)}
-    .brand-badge span{font-weight:700;color:#a5b4fc}
-    .nav-links{margin-left:auto;display:flex;gap:16px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.7rem 1.1rem;border-radius:12px;border:1px solid var(--border);background:#0f1426;color:#fff}
-    .btn-primary{background:linear-gradient(180deg,#7c9cff,#5b7cff);border:0;color:#0a0e1c}
-    .btn-ghost{background:#0f1426;border:1px solid var(--border)}
-    /* hero */
-    .hero{padding:72px 0 32px}
-    .kicker{display:inline-flex;gap:10px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#0e1330;color:#a7b4d8}
-    h1{font-size:44px;line-height:1.18;margin:14px 0 18px}
-    .grad{background:linear-gradient(90deg,#88a3ff 0%,#22d3ee 55%,#60f1b3 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-sub{color:var(--muted);max-width:830px}
-    .cta{display:flex;gap:12px;margin:24px 0 14px;flex-wrap:wrap}
-    .badges{display:flex;gap:12px;flex-wrap:wrap}
-    .badge{padding:8px 12px;border-radius:999px;background:#0e1734;border:1px solid var(--border);color:#9fb0d6}
-    /* section */
-    .section{padding:48px 0;border-top:1px solid rgba(255,255,255,.04)}
-    .title{font-size:22px;margin:0 0 18px}
-    /* cards */
-    .grid{display:grid;gap:18px}
-    @media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    .card{position:relative;background:linear-gradient(180deg,rgba(17,22,43,.92),rgba(14,18,36,.9));border:1px solid var(--border);
-          border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform .2s ease, border-color .2s}
-    .card:hover{transform:translateY(-3px);border-color:#2a3370}
-    .card.clickable{cursor:pointer}
-    .card h3{margin:4px 0 10px}
-    .list{margin:0;padding-left:18px;color:#c7d2fe}
-    .list li{margin:6px 0;color:#b9c2de}
-    /* resource + contact */
-    .panel{background:linear-gradient(180deg,rgba(15,20,38,.75),rgba(12,16,32,.75));border:1px solid var(--border);border-radius:var(--radius);padding:18px}
-    .qrbox{display:flex;align-items:center;justify-content:center;min-height:220px;background:#0f1426;border:1px dashed var(--border);border-radius:12px}
-    .qrbox img{max-width:210px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,.45)}
-    /* footer */
-    .footer{padding:26px 0;color:#8aa0c6;border-top:1px solid var(--border)}
-    /* 小动效 */
-    .pulse{box-shadow:0 0 0 0 rgba(124,156,255,.55);animation:pulse 2s infinite}
-    @keyframes pulse{to{box-shadow:0 0 0 22px rgba(124,156,255,0)}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>深圳共生智汇科技 | AI企业培训 · AI营销增长 · AI短剧</title>
+<meta name="description" content="用『答题卡 + AI搜索(AISEO) + 私域SOP』驱动可度量增长。72小时完成实体上线，支持 Dify + n8n 私有化部署。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect rx=%2212%22 width=%2264%22 height=%2264%22 fill=%22%23231b1f3a%22/><text x=%2232%22 y=%2239%22 font-size=%2230%22 text-anchor=%22middle%22 fill=%22%23fff%22>G</text></svg>">
+<style>
+:root{
+  --bg:#0b1020;
+  --panel:#0f1426;
+  --muted:#94a3b8;
+  --text:#e6eef2;
+  --brand:#7c8cff;      /* 品牌主色：紫蓝 */
+  --brand-2:#22d3ee;    /* 辅助青色 */
+  --border:#1f2542;
+  --card:#11162b;
+  --radius:18px;
+  --shadow:0 8px 30px rgba(6,10,25,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text); background:
+  radial-gradient(1000px 600px at 10% -10%, #1f2856 0%, transparent 60%),
+  radial-gradient(1000px 600px at 110% 20%, #16213e 0%, transparent 55%),
+  var(--bg);
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, PingFang SC,
+       Microsoft YaHei, Helvetica, Arial, sans-serif;
+}
+a{color:inherit; text-decoration:none}
+.container{max-width:1160px; margin:0 auto; padding:0 20px}
+section{padding:72px 0}
+.badge{display:inline-flex; gap:6px; align-items:center;
+  padding:6px 10px; border:1px solid var(--border); border-radius:999px;
+  font-size:12px; color:#a7b4cf; background:rgba(255,255,255,.02)
+}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  padding:0 18px; height:44px; border-radius:12px; font-weight:600
+}
+.btn-primary{
+  color:#fff; background:linear-gradient(180deg,#38bdf8,#577cff);
+  border:1px solid #0ae1c; box-shadow: var(--shadow)
+}
+.btn-ghost{
+  background:#0f1426; border:1px solid var(--border); color:#fff
+}
+.btn:hover{transform:translateY(-1px)}
+/* header */
+.nav{position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(8px);
+  background:rgba(10,14,28,.55); border-bottom:1px solid var(--border)}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:.8rem; height:64px}
+.brand{display:flex; align-items:center; gap:.75rem}
+.brand-badge{width:34px; height:34px; border-radius:9px; background:#1b1f3a;
+  display:grid; place-items:center; box-shadow: var(--shadow)}
+.brand-badge span{font-weight:700; color:#a5b4fc}
+.nav-links{display:flex; gap:22px; align-items:center}
+.nav-links a{opacity:.85}
+.menu-btn{display:none}
+@media (max-width: 860px){
+  .menu-btn{display:inline-flex}
+  .nav-links{position:fixed; inset:64px 0 auto 0; background:#0b1020; border-top:1px solid var(--border);
+    flex-direction:column; padding:16px; display:none}
+  .nav-links.open{display:flex}
+}
+/* hero */
+.hero{padding:84px 0 48px}
+.kicker .badge{margin-right:8px}
+h1{font-size:44px; line-height:1.15; margin:16px 0 18px; max-width:880px}
+h2{font-size:26px; margin:0 0 22px}
+.hero-sub{color:#b7c4e3; max-width:880px}
+.cta{display:flex; gap:14px; margin:24px 0 14px; flex-wrap:wrap}
+.chips{display:flex; gap:10px; flex-wrap:wrap}
+.chip{padding:6px 10px; border:1px dashed #2b3358; border-radius:999px; font-size:12px; color:#97a6c3}
+/* cards */
+.grid{display:grid; gap:16px}
+.cards{grid-template-columns: repeat(3,1fr)}
+.card{background:linear-gradient(180deg,#0f1426,#0b1020);
+  border:1px solid var(--border); border-radius:var(--radius); padding:20px;
+  box-shadow: var(--shadow); transition:.25s; height:100%; cursor:pointer}
+.card:hover{transform:translateY(-4px); border-color:#2a3470}
+.card h3{margin:4px 0 8px}
+.card p{color:#b3c0da}
+@media (max-width:960px){ .cards{grid-template-columns:1fr} }
+/* case grid */
+.case-grid{grid-template-columns:repeat(3,1fr)}
+.case{background:#0f1426; border:1px solid var(--border); border-radius:16px; overflow:hidden}
+.case img{width:100%; height:170px; object-fit:cover; display:block}
+.case .meta{padding:12px 14px; color:#b3c0da}
+@media (max-width:960px){ .case-grid{grid-template-columns:1fr} }
+/* pricing */
+.price{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.tier{background:#0f1426; border:1px solid var(--border); border-radius:18px; padding:22px}
+.tier h3{margin:2px 0 6px}
+.tier .num{font-size:34px; font-weight:800; margin:10px 0 6px}
+.tier ul{margin:12px 0; padding-left:16px; color:#b6c3de}
+.tier .btn{width:100%}
+@media (max-width:960px){ .price{grid-template-columns:1fr} }
+/* faq */
+.faq .q{background:#0f1426; border:1px solid var(--border);
+  border-radius:14px; padding:14px 16px; cursor:pointer}
+.faq .a{display:none; padding:8px 2px 14px 6px; color:#b6c3de}
+.faq .q.open + .a{display:block}
+/* contact */
+.contact{display:grid; grid-template-columns:1.2fr .8fr; gap:16px}
+.contact .panel{background:#0f1426; border:1px solid var(--border);
+  border-radius:18px; padding:18px}
+.contact .row{display:flex; gap:10px; flex-wrap:wrap}
+.contact .social a{display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--border); border-radius:999px; padding:8px 12px; font-size:13px}
+.contact small{color:#9fb0ce}
+.qr{display:grid; place-items:center; background:#0b1328; border:1px dashed #2b3358; border-radius:16px; padding:12px}
+.qr img{max-width:100%; border-radius:12px; box-shadow: var(--shadow)}
+@media (max-width:960px){ .contact{grid-template-columns:1fr} }
+/* footer */
+footer{padding:28px 0 40px; border-top:1px solid var(--border); color:#8ea3c9}
+footer .row{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between}
+/* modal */
+.modal{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; place-items:center; padding:20px; z-index:60}
+.modal.open{display:grid}
+.modal .box{background:#0f1426; border:1px solid var(--border); border-radius:18px; padding:10px}
+.modal img{max-width:min(92vw,480px); border-radius:12px}
+</style>
 </head>
 <body>
-  <!-- 顶部导航 -->
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-badge"><span>智</span></div>
-        <strong>深圳共生智汇科技有限公司</strong>
+
+<!-- header -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home" aria-label="共生智汇">
+      <div class="brand-badge"><span>G</span></div>
+      <strong>深圳共生智汇科技</strong>
+    </a>
+    <button class="btn btn-ghost menu-btn" id="menuBtn">菜单</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#solutions">解决方案</a>
+      <a href="#cases">案例</a>
+      <a href="#why">为什么选我们</a>
+      <a href="#pricing">价格</a>
+      <a href="#contact">联系</a>
+      <a class="btn btn-primary" href="#contact">添加企业微信</a>
+    </nav>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="kicker"><span class="badge">Corporate AI Training</span><span class="badge">AI Growth</span><span class="badge">AI Short Drama</span></div>
+    <h1>AI企业培训 · <span style="background:linear-gradient(90deg,#60a5fa,#7c8cff);-webkit-background-clip:text;color:transparent">AI营销增长</span> · AI短剧</h1>
+    <p class="hero-sub">用「<b>答题卡</b> + <b>AI搜索（AISEO）</b> + <b>私域SOP</b>」驱动可度量增长。北极星指标：<b>线索→预约→成交</b>，支持 Dify + n8n 私有化部署。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#contact">立即咨询</a>
+      <a class="btn btn-ghost" href="press_kit.md">下载资料 / Press Kit</a>
+    </div>
+    <div class="chips">
+      <span class="chip">72小时：实体&问答卡上线</span>
+      <span class="chip">JSON-LD/FAQ 可被模型抽取与引用</span>
+      <span class="chip">私有化：数据分级与合规</span>
+    </div>
+  </div>
+</section>
+
+<!-- solutions -->
+<section id="solutions">
+  <div class="container">
+    <h2>— 我们提供什么</h2>
+    <div class="grid cards">
+      <article class="card" onclick="location.hash='#contact'">
+        <h3>AI企业培训（AI企培）</h3>
+        <p>内训 / 训练营 / 岗位评估与证书；业务流程 AI 化与安全治理。</p>
+      </article>
+      <article class="card" onclick="location.hash='#contact'">
+        <h3>AI营销增长（AISEO + 答题卡）</h3>
+        <p>Answer Cards、FAQ/HowTo JSON-LD、about.txt；搜索推荐与权威外链策略。</p>
+      </article>
+      <article class="card" onclick="location.hash='#contact'">
+        <h3>AI短剧（内容 × 增长闭环）</h3>
+        <p>品牌故事内容化与脚本工程；投放/私域联动提升转化，合规提示与禁词库管理。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- cases -->
+<section id="cases">
+  <div class="container">
+    <h2>— 案例&客户</h2>
+    <div class="grid case-grid">
+      <div class="case">
+        <img src="https://picsum.photos/seed/ai1/640/360" alt="案例图">
+        <div class="meta"><b>制造业 · 机械厂</b>｜答题卡 + AISEO 上线 10 天获取首批询盘</div>
       </div>
-      <div class="nav-links">
-        <a href="#solutions">解决方案</a>
-        <a href="#why">为什么选择我们</a>
-        <a href="#roadmap">72小时上手</a>
-        <a href="#industries">行业</a>
-        <a href="#resources">资源</a>
-        <a href="#contact">联系</a>
-        <a class="btn btn-ghost" href="wecom_qr.jpg" target="_blank">添加企业微信</a>
+      <div class="case">
+        <img src="https://picsum.photos/seed/ai2/640/360" alt="案例图">
+        <div class="meta"><b>建材 · 石膏板</b>｜知识库抽取 + 私域 SOP，客服效率提升 37%</div>
+      </div>
+      <div class="case">
+        <img src="https://picsum.photos/seed/ai3/640/360" alt="案例图">
+        <div class="meta"><b>电工 · 高温电线</b>｜英⽂站点权威链接建设，模型回答可被引用</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- HERO -->
-  <header class="hero container">
-    <span class="kicker">Corporate AI Training · <b>AI Growth</b> · AI Short Drama</span>
-    <h1>AI企业培训 · <span class="grad">AI营销增长</span> · AI短剧</h1>
-    <p class="hero-sub">用「答题卡 + AI搜索（AISEO）+ 私域SOP」驱动<strong>可度量增长</strong>。北极星指标：<b>线索→预约→成交</b>。支持 Dify + n8n 私有化，内控与合规治理。</p>
-    <div class="cta">
-      <a class="btn btn-primary pulse" href="mailto:3868945582@qq.com">立即咨询</a>
-      <a class="btn" href="/press_kit.md" target="_blank">下载资料 / Press Kit</a>
+<!-- why -->
+<section id="why">
+  <div class="container">
+    <h2>— 为什么选择我们</h2>
+    <div class="grid cards">
+      <div class="card"><h3>结果导向</h3><p>以“线索→预约→成交”为北极星指标，提供看板与停损护栏，避免无效投入。</p></div>
+      <div class="card"><h3>可被机器抽取</h3><p>FAQ/HowTo JSON-LD + about.txt + 多站一致实体指纹，提升模型收录与引用概率。</p></div>
+      <div class="card"><h3>私有化与合规</h3><p>支持 Dify + n8n 自建，数据分级、密钥与审计合规到位。</p></div>
     </div>
-    <div class="badges">
-      <span class="badge">72小时：完成实体搭建与答题卡上线</span>
-      <span class="badge">JSON-LD/FAQ：可被模型抽取与引用</span>
-      <span class="badge">私有化：数据分级与合规模块</span>
-    </div>
-  </header>
+  </div>
+</section>
 
-  <!-- 我们提供什么 -->
-  <section id="solutions" class="section">
-    <div class="container">
-      <h2 class="title">— 我们提供什么</h2>
-      <div class="grid cols-3">
-        <a class="card clickable" href="#ai-train">
-          <h3>AI企业培训（AI企培）</h3>
-          <ul class="list">
-            <li>内训 / 训练营 / 岗位评估与证书</li>
-            <li>Dify + n8n 私有化最佳实践</li>
-            <li>业务流程AI化与安全治理</li>
-          </ul>
-        </a>
-        <a class="card clickable" href="#ai-growth">
-          <h3>AI营销增长（AISEO + 答题卡）</h3>
-          <ul class="list">
-            <li>Answer Cards：FAQ/HowTo JSON-LD、about.txt</li>
-            <li>AI 搜索推荐与权威外链策略</li>
-            <li>线索→预约→成交 数据看板与停损线</li>
-          </ul>
-        </a>
-        <a class="card clickable" href="#ai-drama">
-          <h3>AI短剧（内容×增长闭环）</h3>
-          <ul class="list">
-            <li>品牌故事内容化与脚本工程</li>
-            <li>与投放/私域联动提高转化</li>
-            <li>合规提示与禁词库管理</li>
-          </ul>
-        </a>
+<!-- pricing -->
+<section id="pricing">
+  <div class="container">
+    <h2>— 价格与套餐</h2>
+    <div class="price">
+      <div class="tier">
+        <h3>起步版</h3>
+        <div class="num">￥6,980</div>
+        <ul>
+          <li>官网单页 + 问答卡模板</li><li>about.txt / 站点结构化</li><li>72 小时上线</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">咨询起步版</a>
+      </div>
+      <div class="tier" style="border-color:#2c3a96">
+        <h3>增长版</h3>
+        <div class="num">￥19,800</div>
+        <ul>
+          <li>AISEO 关键词地图 + 外链策略</li><li>问答卡/FAQ JSON-LD 落库</li><li>看板与周报</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">预约增长版</a>
+      </div>
+      <div class="tier">
+        <h3>私有化</h3>
+        <div class="num">面议</div>
+        <ul>
+          <li>Dify + n8n 自建</li><li>数据分级与密钥治理</li><li>合规与培训</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">获取方案</a>
       </div>
     </div>
-  </section>
 
-  <!-- 为什么选择我们 -->
-  <section id="why" class="section">
-    <div class="container">
-      <h2 class="title">— 为什么选择我们</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>结果导向</h3>
-          <p>以“线索→预约→成交”为北极星指标，设置看板与停损线，避免无效投入。</p>
-        </div>
-        <div class="card">
-          <h3>可被机器抽取</h3>
-          <p>统一的 FAQ/HowTo JSON-LD + <code>about.txt</code>，多站一致实体指纹，提升模型收录与引用概率。</p>
-        </div>
-        <div class="card">
-          <h3>私有化与合规</h3>
-          <p>支持 Dify + n8n 自建；数据分级、密钥与审计合规到位。</p>
-        </div>
+    <div class="grid faq" style="margin-top:22px">
+      <div>
+        <div class="q">三天能不能“被模型引用”？</div>
+        <div class="a">能快速看到早期效果，但稳定“被引用”受抓取周期、权威度与结构化质量影响。我们用“分层目标：72 小时上线 → 7–14 天权威链接 → 30 天监测与迭代”。</div>
+      </div>
+      <div>
+        <div class="q">可以同时做国内外市场吗？</div>
+        <div class="a">可以。内容与实体指纹保持一致，分别在国内生态与海外生态做结构化与权威源铺设。</div>
+      </div>
+      <div>
+        <div class="q">是否支持本地/私有化部署？</div>
+        <div class="a">支持。提供 Dify + n8n 自建方案与最佳实践，含密钥与数据分级、审计策略。</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 72 小时上手路线 -->
-  <section id="roadmap" class="section">
-    <div class="container">
-      <h2 class="title">— 72 小时上手路线</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>D1 实体上线</h3>
-          <p>官网名片页 + FAQ JSON-LD、GitHub 组织 <code>.github/profile/README.md</code> 与 <code>about</code> 仓库。</p>
+<!-- contact -->
+<section id="contact">
+  <div class="container">
+    <h2>— 联系我们</h2>
+    <div class="contact">
+      <div class="panel">
+        <p>欢迎添加企业微信或邮件预约交流。</p>
+        <div class="row">
+          <a class="btn btn-primary" href="javascript:void(0)" onclick="openQr()">添加企业微信</a>
+          <a class="btn btn-ghost" href="mailto:3868945582@qq.com?subject=%E9%A2%98%3A%20AI%E9%A1%B9%E7%9B%AE%E5%92%A8%E8%AF%A2&body=%E4%BD%95%E6%97%B6%E4%BE%BF%E4%BA%8E%E7%94%B5%E8%AF%9D%3F">邮件预约</a>
+          <button class="btn btn-ghost" onclick="copyMail()">复制邮箱</button>
         </div>
-        <div class="card">
-          <h3>D2 触点铺设</h3>
-          <p>知乎 2 条问答、LinkedIn 公司页、服务号文章；与官网 / GitHub 互链。</p>
-        </div>
-        <div class="card">
-          <h3>D3 权威外链</h3>
-          <p>选择 2–3 个协会/媒体/百科做引用源；开始观测模型“被推荐”问句数。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 资源 -->
-  <section id="resources" class="section">
-    <div class="container">
-      <h2 class="title">— 资料与链接</h2>
-      <div class="grid cols-2">
-        <div class="panel">
-          <h3>对外资料</h3>
-          <ul class="list">
-            <li><a href="/press_kit.md" target="_blank">Press Kit（中英）</a></li>
-            <li><a href="/about.txt" target="_blank">about.txt（机器可抽取实体卡）</a></li>
-            <li><a href="https://github.com/szgszhai" target="_blank">GitHub 组织主页</a></li>
-          </ul>
-          <h3 style="margin-top:16px">方法论</h3>
-          <p>答题卡（Answer Cards） × AI 搜索（AISEO） × 私域 SOP；以数据看板与停损线保障投入产出比。</p>
-        </div>
-        <div class="panel">
-          <h3>企业微信二维码</h3>
-          <div class="qrbox">
-            <img id="qrImg" src="wecom_qr.jpg" alt="企业微信二维码" onerror="document.getElementById('qrImg').style.display='none';document.getElementById('qrFallback').style.display='block'">
-            <div id="qrFallback" style="display:none;color:#9fb0d6;text-align:center">
-              🔍 未检测到 <code>wecom_qr.jpg</code><br>请将二维码图片放到网站根目录（与 <code>index.html</code> 同层），刷新即可显示。
-            </div>
+        <p style="margin-top:10px">
+          <b>邮箱</b>：3868945582@qq.com<br/>
+          <b>电话</b>：198-6827-2319<br/>
+          <b>地址</b>：深圳市龙岗区横岗街道六约北社区深峰路2号振业城颖月坊8栋G8-2<br/>
+          <small>统一社会信用代码：91440300MAE9EC8K40</small>
+        </p>
+        <div class="social">
+          <p><b>社交平台（国内+海外）</b></p>
+          <div class="row">
+            <a href="#" title="小红书">📕 小红书</a>
+            <a href="#" title="视频号">🎬 视频号</a>
+            <a href="#" title="抖音">🎵 抖音</a>
+            <a href="https://github.com/szgszhai" target="_blank" rel="noopener">🐙 GitHub</a>
+            <a href="mailto:3868945582@qq.com">✉️ Email</a>
           </div>
+          <small>把你的主页链接替换为实际地址；没有就先保留占位。</small>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="qr">
+          <img src="wecom_qr.jpg" alt="企业微信二维码" onerror="this.outerHTML='<div style=&quot;padding:16px;text-align:center;color:#9fb0ce&quot;>请将 <b>wecom_qr.jpg</b> 放到网站根目录，这里会自动显示二维码。</div>'">
+          <small>长按识别二维码，添加企业微信</small>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 联系 -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="title">— 联系我们</h2>
-      <div class="grid cols-2">
-        <div class="panel">
-          <p>欢迎添加企业微信或邮件预约交流。</p>
-          <p>邮箱：<a href="mailto:3868945582@qq.com">3868945582@qq.com</a><br>
-             电话：<a href="tel:+8619868272319">+86-198-6827-2319</a><br>
-             地址：深圳市龙岗区横岗街道六约北社区深峰路2号振业城颖月坊8栋G8-2<br>
-             统一社会信用代码：91440300MAE9EC8K40
-          </p>
-          <div class="cta">
-            <a class="btn btn-primary" href="mailto:3868945582@qq.com">邮件预约</a>
-            <a class="btn" href="https://github.com/szgszhai" target="_blank">GitHub 主页</a>
-          </div>
-        </div>
-        <div class="panel">
-          <p style="color:#a7b4d8">也可直接点击右上角「添加企业微信」。</p>
-        </div>
-      </div>
+<footer>
+  <div class="container row">
+    <div>© 2025 深圳共生智汇科技有限公司 · All rights reserved.</div>
+    <div class="row">
+      <a href="#home">返回顶部</a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <footer class="footer">
-    <div class="container">© 深圳共生智汇科技有限公司 · szgszhai.com</div>
-  </footer>
+<!-- modal -->
+<div class="modal" id="qrModal" aria-hidden="true" role="dialog">
+  <div class="box"><img src="wecom_qr.jpg" alt="企业微信二维码"></div>
+</div>
 
-  <script>
-    // 平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }
-      })
-    });
-  </script>
-
-  <!-- JSON-LD：组织信息（后续把域名切换为 www.szgszhai.com 时记得同步） -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"深圳共生智汇科技有限公司",
-    "url":"https://szgszhai.github.io",
-    "sameAs":["https://github.com/szgszhai"],
-    "contactPoint":[{
-      "@type":"ContactPoint",
-      "email":"3868945582@qq.com",
-      "telephone":"+8619868272319",
-      "contactType":"sales"
-    }]
-  }
-  </script>
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn?.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+document.querySelectorAll('.faq .q').forEach(q=>{
+  q.addEventListener('click', ()=> q.classList.toggle('open'));
+});
+function copyMail(){
+  navigator.clipboard.writeText('3868945582@qq.com');
+  alert('邮箱已复制：3868945582@qq.com');
+}
+function openQr(){ document.getElementById('qrModal').classList.add('open'); }
+document.getElementById('qrModal').addEventListener('click', e=>{
+  if(e.target.id==='qrModal') e.currentTarget.classList.remove('open');
+});
+</script>
 </body>
 </html>
